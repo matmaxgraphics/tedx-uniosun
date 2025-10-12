@@ -252,9 +252,8 @@ header {
 .stats {
   background: #fff;
   padding: 3rem 2rem;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   max-width: 1000px;
-  border-radius: 8px;
 }
 
 .stats-grid {
@@ -306,7 +305,6 @@ header {
   padding: 2rem;
   margin: 0 auto;
   max-width: 1000px;
-  border-radius: 8px;
 }
 
 .event-photo img {
