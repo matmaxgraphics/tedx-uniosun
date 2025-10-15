@@ -11,11 +11,21 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <div class="logo">
-        <span class="ted">TED<sup>x</sup></span> Uniosun
+        <img src="images/logo-white.png" alt="TEDxUniosun Logo" />
       </div>
       <div class="header-buttons">
         <a href="#" class="btn btn-primary">Get Tickets</a>
@@ -41,7 +51,7 @@
           </div>
           <div class="hero-image">
             <div class="hero-image-inner">
-              <img src="images/img-demo.png" alt="" />
+              <img src="images/Theme 1.png" alt="" />
             </div>
           </div>
         </div>
@@ -167,11 +177,45 @@
         </div>
 
         <div class="event-photo">
-          <img src="images/event-image.png" alt="TEDxUniosun Event Attendees" />
+          <!-- <img src="images/event-image.png" alt="TEDxUniosun Event Attendees" /> -->
+          <div class="swiper">
+            <div class="swiper-wrapper" id="carousel-wrapper"></div>
+
+            <!-- Pagination & Navigation -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>Footer content can be added here</footer>
+    <footer class="section-max-width">
+      <div class="inner--footer">
+        <p>&copy; 2025 TEDxUniOsun. All rights reserved.</p>
+        <ul class="social--links">
+          <a href="https://www.instagram.com/tedxuniosun" target="_blank"
+            ><i class="ri-instagram-line"></i
+          ></a>
+          <a href="https://www.tiktok.com/@tedxuniosun" target="_blank"
+            ><i class="ri-tiktok-line"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/tedxuniosun/"
+            target="_blank"
+            ><i class="ri-linkedin-fill"></i
+          ></a>
+          <a href="https://www.facebook.com/tedxuniosun3080" target="_blank"
+            ><i class="ri-facebook-fill"></i
+          ></a>
+          <a href="https://youtube.com/@tedxuniosun" target="_blank"
+            ><i class="ri-youtube-line"></i
+          ></a>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>

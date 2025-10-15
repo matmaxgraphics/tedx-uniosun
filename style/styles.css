@@ -28,12 +28,19 @@ header {
 
 .logo {
   font-size: 1.25rem;
-  font-weight: 300;
+  width: 200px;
+  height: auto;
 }
 
-.logo .ted {
-  color: #ff2b06;
-  font-weight: 700;
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 150px;
+  }
 }
 
 .header-buttons {
@@ -89,11 +96,11 @@ header {
   display: flex;
   gap: 3rem;
   align-items: center;
-  flex-flow: row wrap;
   justify-content: space-between;
 }
+
 .hero-content {
-  max-width: 600px;
+  width: 50%;
 }
 
 .badge {
@@ -127,16 +134,31 @@ header {
 }
 
 .hero-image {
-  position: relative;
-  padding: 1rem;
   background: linear-gradient(135deg, #ff2b06 0%, #ff2b06 100%);
   border-radius: 8px;
-  max-width: 600px;
+  width: 50%;
+}
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
 }
 
 .hero-image-inner {
-  background: #d3d3d3;
+  background: #000;
   border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .hero .wrapper {
+    flex-flow: row wrap;
+  }
+  .hero-content {
+    width: 100%;
+  }
+  .hero-image {
+    width: 100%;
+  }
 }
 
 /* Marquee */
@@ -352,5 +374,63 @@ footer {
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Swiper carousel Styles */ 
+.swiper {
+  width: 90%;
+  max-width: 1000px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #e71d38 !important;
+}
+
+.swiper-pagination-bullet {
+  background: #bbb;
+  opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+  background: #e71d38 !important;
+}
+
+/* Footer styles */
+.inner--footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.inner--footer ul {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+.inner--footer a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.75rem;
+}
+
+@media (max-width: 700px) {
+  .inner--footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .inner--footer ul {
+    justify-content: center;
   }
 }
