@@ -324,7 +324,7 @@ header {
 /* Event Photo */
 .event-photo {
   background: #fff;
-  padding: 2rem;
+  padding: 0.5rem;
   margin: 0 auto;
   max-width: 1000px;
 }
