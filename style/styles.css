@@ -68,21 +68,10 @@ header {
   height: auto;
 }
 
-@media (max-width: 600px) {
-  .logo {
-    width: 150px;
-  }
-}
-
 .header-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-}
-@media (max-width: 500px) {
-  .header-buttons {
-    display: none;
-  }
 }
 
 .btn {
@@ -116,7 +105,19 @@ header {
   background: #fff;
   color: #000;
 }
-
+@media (max-width: 500px) {
+  .header-buttons {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  header{
+    margin-top: 64px;
+  }
+  .logo {
+    width: 150px;
+  }
+}
 /* Hero Section */
 .hero {
   background: #000;
@@ -125,7 +126,7 @@ header {
 }
 @media (max-width: 600px) {
   .hero {
-    margin: 0 0 32px;
+    margin: 0 0 24px;
   }
 }
 .hero .wrapper {
