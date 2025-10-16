@@ -126,7 +126,8 @@ header {
 }
 @media (max-width: 600px) {
   .hero {
-    margin: 0 0 24px;
+    margin: 0 0 12px;
+    padding: 2rem;
   }
 }
 .hero .wrapper {
