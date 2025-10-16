@@ -1,3 +1,28 @@
+const eventDate = new Date("Nov 29, 2025 00:00:00").getTime();
+
+const countdown = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.querySelector(".timer").innerHTML = "🎊 The event has started!";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").textContent = days + "d";
+  document.getElementById("hours").textContent = hours + "h";
+  document.getElementById("minutes").textContent = minutes + "m";
+  document.getElementById("seconds").textContent = seconds + "s";
+}, 1000);
+
 const carouselImages = [
   { src: "images/event-imgs/img-1.jpg", alt: "TEDxUniOsun event image" },
   { src: "images/event-imgs/img-2.jpg", alt: "TEDxUniOsun event image" },
