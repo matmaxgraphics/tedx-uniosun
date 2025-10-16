@@ -27,6 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: row wrap;
   gap: 12px;
   z-index: 1000;
 }
@@ -77,6 +78,11 @@ header {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .header-buttons {
+    display: none;
+  }
 }
 
 .btn {
