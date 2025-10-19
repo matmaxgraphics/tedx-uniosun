@@ -1,3 +1,16 @@
+//MOBILE NAVBAR SCRIPT 
+const navToggle = document.getElementById("nav-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show-menu");
+    navToggle.classList.toggle("active");
+  });
+}
+
+
+// COUNTDOWN TIMER SCRIPT
 const eventDate = new Date("Nov 29, 2025 00:00:00").getTime();
 
 const countdown = setInterval(() => {
@@ -23,6 +36,8 @@ const countdown = setInterval(() => {
   document.getElementById("seconds").textContent = seconds + "s";
 }, 1000);
 
+
+// IMAGE CAROUSEL SCRIPT USING SWIPER.JS
 const carouselImages = [
   { src: "images/event-imgs/img-1.jpg", alt: "TEDxUniOsun event image" },
   { src: "images/event-imgs/img-2.jpg", alt: "TEDxUniOsun event image" },
@@ -82,4 +97,23 @@ const swiper = new Swiper(".swiper", {
     640: { slidesPerView: 1 },
     1024: { slidesPerView: 2 },
   },
+});
+
+
+// FAQ ACCORDION SCRIPT
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+// Loop through each question
+faqQuestions.forEach((question) => {
+  question.addEventListener("click", () => {
+    const currentItem = question.parentElement;
+
+    const isActive = currentItem.classList.contains("active");
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      item.classList.remove("active");
+    });
+    if (!isActive) {
+      currentItem.classList.add("active");
+    }
+  });
 });

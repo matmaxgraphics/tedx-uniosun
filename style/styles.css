@@ -1,3 +1,10 @@
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --card-bg: #000;
+  --border: #222;
+  --accent: #3b82f6;
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +17,43 @@ body {
   color: #fff;
   background-color: #000;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  padding: 0.625rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #ff2b06;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #e02505;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
 .section-max-width {
   max-width: 1200px;
   margin: 0 auto;
@@ -54,19 +98,21 @@ body {
 /* Header */
 header {
   background: #000;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 48px;
+  margin-top: 48px !important;
+  position: relative;
 }
 
 .logo {
   font-size: 1.25rem;
   width: 200px;
   height: auto;
+  z-index: 1001;
 }
 
 .logo img {
@@ -74,54 +120,71 @@ header {
   height: auto;
 }
 
-.header-buttons {
+.nav--links {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 0.625rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.875rem;
+  gap: 2rem;
+  align-items: center;
+  font-size: 1rem;
+  list-style: none;
   font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
+}
+.nav--links a {
   transition: all 0.3s ease;
 }
+.nav--links a:hover {
+  transition: 0.3s ease;
+  color: #e02505;
+}
 
-.btn-primary {
-  background: #ff2b06;
+.nav-toggle {
+  font-size: 1.5rem;
   color: #fff;
+  cursor: pointer;
+  display: none;
+  z-index: 1001;
+}
+.nav-toggle .ri-close-line {
+  display: none;
 }
 
-.btn-primary:hover {
-  background: #e02505;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.btn-secondary:hover {
-  background: #fff;
-  color: #000;
-}
-@media (max-width: 500px) {
-  .header-buttons {
-    display: none;
-  }
-}
 @media (max-width: 600px) {
-  header{
+  header {
     margin-top: 84px;
   }
   .logo {
     width: 150px;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .nav-toggle.active .ri-close-line {
+    display: block;
+  }
+  .nav-toggle.active .ri-menu-line {
+    display: none;
+  }
+  /* Style the mobile menu */
+  .nav--links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-size: 1.25rem;
+
+    /* Hide it by default */
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+  }
+  .nav--links.show-menu {
+    transform: translateY(0);
   }
 }
 /* Hero Section */
@@ -440,6 +503,82 @@ header {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* FAQ Section */
+.faq {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  padding: 24px;
+  margin: 48px auto 0;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  padding: 1.2rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--fg);
+  transition: background 0.2s ease;
+}
+
+.faq-question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hide the answer by default with a smooth transition */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+/* Style the icon's transition */
+.faq-question i {
+  transition: transform 0.3s ease;
+  font-size: 1.25rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.faq-answer.open {
+  padding: 1rem 1.5rem;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 16px;
 }
 
 /* Footer */
